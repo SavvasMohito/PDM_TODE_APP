@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ACA1A1"
+        android:theme="@style/Theme.PDMTODE.AppBarOverlay">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/logo_el" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ACA1A1"
+            app:tabIconTint="@color/black"
+            app:tabIndicatorColor="#673A3A"
+            app:tabTextColor="#673A3A">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/announcements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ΑΝΑΚΟΙΝΩΣΕΙΣ" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/program"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ΩΡΟΛΟΓΙΟ ΠΡΟΓΡΑΜΜΑ" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ΕΠΙΚΟΙΝΩΝΙΑ" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:adjustViewBounds="false"
+        android:background="#255AAF"
+        android:backgroundTint="#336CA5"
+        android:foreground="@drawable/toppng_com_facebook_logo_white_white_facebook_f_logo_760x1440"
+        app:backgroundTint="#FFFFFF"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
