@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
             android:text="6ο χλμ Παλαιάς Ε.Ο. Γρεβενών Κοζάνης  Τ.Κ. 51100 Γρεβενά"
             android:textAlignment="center"
             android:textSize="24sp" />
