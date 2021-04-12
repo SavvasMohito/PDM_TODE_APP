@@ -27,13 +27,12 @@ import com.example.pdmtode.ui.main.SectionsPagerAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
-    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         TabLayout tabLayout = findViewById(R.id.tabs);
         TabItem tabNews = findViewById(R.id.announcements);

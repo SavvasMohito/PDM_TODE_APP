@@ -1,5 +1,7 @@
 package com.example.pdmtode;
 
+import android.os.StrictMode;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -13,6 +15,7 @@ import javax.xml.stream.events.XMLEvent;
 
 
 public class RSSFeedParser {
+
     static final String TITLE = "title";
     static final String DESCRIPTION = "description";
     static final String CHANNEL = "channel";
@@ -27,6 +30,7 @@ public class RSSFeedParser {
     final URL url;
 
     public RSSFeedParser(String feedUrl) {
+
         try {
             this.url = new URL(feedUrl);
         } catch (MalformedURLException e) {
@@ -35,6 +39,7 @@ public class RSSFeedParser {
     }
 
     public Feed readFeed() {
+
         Feed feed = null;
         try {
             boolean isFeedHeader = true;
@@ -115,6 +120,7 @@ public class RSSFeedParser {
 
     private String getCharacterData(XMLEvent event, XMLEventReader eventReader)
             throws XMLStreamException {
+
         String result = "";
         event = eventReader.nextEvent();
         if (event instanceof Characters) {
@@ -124,6 +130,7 @@ public class RSSFeedParser {
     }
 
     private InputStream read() {
+
         try {
             return url.openStream();
         } catch (IOException e) {
