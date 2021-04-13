@@ -1,17 +1,19 @@
 package com.example.pdmtode;
 
-public class newsReader {
+import android.app.Activity;
 
-    public static void read(){
-        RSSFeedParser parser = new RSSFeedParser("https://ba.uowm.gr/feed/");
-        Feed feed = parser.readFeed();
-        System.out.println(feed);
-        System.out.println(feed.getMessages().size());
-        for (FeedMessage message : feed.getMessages()) {
-            System.out.println(message);
-            System.out.println("hai");
+public class newsReader extends Activity {
 
+    public static Feed read(){
+        Feed feed = null;
+        try{
+            RSSFeedParser parser = new RSSFeedParser("https://ba.uowm.gr/feed/");
+            feed = parser.readFeed();
+
+        }catch (Exception e){
+            System.out.println(e.toString());
         }
+        return feed;
     }
 
 }

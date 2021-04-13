@@ -7,6 +7,15 @@ public class FeedMessage {
     String link;
     String author;
     String guid;
+    String pubDate;
+
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
+    }
+
+    public String getPubDate() {
+        return pubDate;
+    }
 
     public String getTitle() {
         return title;

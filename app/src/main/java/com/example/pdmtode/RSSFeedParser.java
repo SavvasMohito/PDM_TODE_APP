@@ -1,7 +1,5 @@
 package com.example.pdmtode;
 
-import android.os.StrictMode;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -59,6 +57,7 @@ public class RSSFeedParser {
             InputStream in = read();
             XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
             // read the XML document
+            boolean flag = false;
             while (eventReader.hasNext()) {
                 XMLEvent event = eventReader.nextEvent();
                 if (event.isStartElement()) {
@@ -78,6 +77,17 @@ public class RSSFeedParser {
                             break;
                         case DESCRIPTION:
                             description = getCharacterData(event, eventReader);
+                            if (flag){
+                                FeedMessage message = new FeedMessage();
+                                message.setAuthor(author);
+                                message.setDescription(description);
+                                message.setGuid(guid);
+                                message.setLink(link);
+                                message.setTitle(title);
+                                message.setPubDate(pubdate);
+                                feed.getMessages().add(message);
+                            }
+                            flag = true;
                             break;
                         case LINK:
                             link = getCharacterData(event, eventReader);
@@ -97,9 +107,10 @@ public class RSSFeedParser {
                         case COPYRIGHT:
                             copyright = getCharacterData(event, eventReader);
                             break;
-                    }
-                } else if (event.isEndElement()) {
-                    if (event.asEndElement().getName().getLocalPart() == (ITEM)) {
+                    }/*
+                    if (flag) {
+                        System.out.println("hey");
+                        //if (event.asEndElement().getName().getLocalPart() == (ITEM)) {
                         FeedMessage message = new FeedMessage();
                         message.setAuthor(author);
                         message.setDescription(description);
@@ -107,10 +118,12 @@ public class RSSFeedParser {
                         message.setLink(link);
                         message.setTitle(title);
                         feed.getMessages().add(message);
-                        event = eventReader.nextEvent();
-                        continue;
-                    }
+                        //event = eventReader.nextEvent();
+                        //continue;
+                        //}
+                    }*/
                 }
+
             }
         } catch (XMLStreamException e) {
             throw new RuntimeException(e);
