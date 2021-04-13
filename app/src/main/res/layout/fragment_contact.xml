@@ -433,7 +433,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:autoLink="email"
-                    android:text="paris.patsis@gmail.com" />
+                    android:text="gsisias@yahoo.com" />
             </TableRow>
 
             <TableRow
