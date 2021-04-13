@@ -8,8 +8,10 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="50dp"
         android:background="#683C3C"
         android:entries="@array/numbers"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
         android:textColor="#1C1717" />
 </FrameLayout>
