@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,43 @@ public class ProgramFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_program, container, false);
+        View v = inflater.inflate(R.layout.fragment_program, container, false);
+
+        Spinner spinner = (Spinner) v.findViewById (R.id.spinner);
+        LinearLayout exB = (LinearLayout)v.findViewById(R.id.exB);
+        LinearLayout exD = (LinearLayout)v.findViewById(R.id.exD);
+        LinearLayout exST = (LinearLayout)v.findViewById(R.id.exST);
+        LinearLayout exH = (LinearLayout)v.findViewById(R.id.exH);
+
+        spinner.setOnItemSelectedListener
+                (new AdapterView.OnItemSelectedListener () {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        clearEx();
+                        switch (position){
+                            case 0:
+                                exB.setVisibility(View.VISIBLE);
+                            case 1:
+                                exD.setVisibility(View.VISIBLE);
+                            case 2:
+                                exST.setVisibility(View.VISIBLE);
+                            case 3:
+                                exH.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                    private void clearEx(){
+                        exB.setVisibility(View.GONE);
+                        exD.setVisibility(View.GONE);
+                        exST.setVisibility(View.GONE);
+                        exH.setVisibility(View.GONE);
+                    }
+                });
+
+        return v;
     }
+
 }
