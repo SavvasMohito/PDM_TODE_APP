@@ -44,34 +44,6 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right|left"
-                        android:text="Τηλεφωνικό Κέντρο:"
-                        android:textAlignment="viewStart"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/kentrothl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:autoLink="phone"
-                        android:phoneNumber="true"
-                        android:text="24610 68000"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="left">
 

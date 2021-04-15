@@ -1,5 +1,7 @@
 package com.example.pdmtode;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,8 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -97,6 +102,46 @@ public class ProgramFragment extends Fragment {
                         exH.setVisibility(View.GONE);
                     }
                 });
+
+        Button ba1 = (Button) v.findViewById(R.id.ba1);
+        ba1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://zoom.us/my/uowm.ba1"));
+                startActivity(intent);
+            }
+        });
+
+        Button ba2 = (Button) v.findViewById(R.id.ba2);
+        ba2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://zoom.us/my/uowm.ba2"));
+                startActivity(intent);
+            }
+        });
+
+        Button ba3 = (Button) v.findViewById(R.id.ba3);
+        ba3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://zoom.us/my/uowm.ba3"));
+                startActivity(intent);
+            }
+        });
+
+        Button ba4 = (Button) v.findViewById(R.id.ba4);
+        ba4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://zoom.us/my/uowm.ba4"));
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
